@@ -19,6 +19,23 @@ int course_cnt;
 
 }student;
 
+//------------------Courses function----------------//
+void initialize(struct course List[]){
+
+List[0].CRN=4587;
+strcpy(List[0].course, "MAT 263");
+List[0].credit_hr=4;
+List[1].CRN=4599;
+strcpy(List[1].course, "COP 220");
+List[1].credit_hr=3;
+List[2].CRN=8997;
+strcpy(List[2].course, "GOL 124");
+List[2].credit_hr=1;
+
+
+
+
+}
 
 
 //-----------Main function-----------------------------------//
