@@ -3,6 +3,15 @@
 
 int main(){
 
-    printf("\n\tFinal project\n");
+    printf("\nWelcome!\nChoose from the following options:\n");
+    printf("\t1- Add a new student\n");
+    printf("\t2- Add/Delete a course\n");
+    printf("\t3- Search for student\n");
+    printf("\t4- Print fee invoice\n");
+    printf("\t0- Exit program\n");
+    
+    printf("\nEnter your selection: ");
+
+    
     return 0;
 }
