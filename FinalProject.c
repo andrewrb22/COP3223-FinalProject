@@ -69,7 +69,7 @@ int searchstudent(student student[], int id, int cnt)
 }
 
 //---------------Search Course Function---------------------//
-int searchCourse(course List[], int course_list_cnt, int id)
+int searchcourse(course List[], int course_list_cnt, int id)
 {
 
     int i;
@@ -149,16 +149,230 @@ int printFee(student student[], course List[], int student_cnt, int student_id, 
 //-----------Main function-----------------------------------//
 
 int main()
+
 {
 
-    printf("\nWelcome!\nChoose from the following options:\n");
-    printf("\t1- Add a new student\n");
-    printf("\t2- Add/Delete a course\n");
-    printf("\t3- Search for student\n");
-    printf("\t4- Print fee invoice\n");
-    printf("\t0- Exit program\n");
+    int choice;
 
-    printf("\nEnter your selection: ");
+    course List[100];
+
+    int course_list_cnt = 7; //// i=for initilize
+
+    initialize(List); ////initialize course list
+
+    student student[500];
+
+    int student_cnt = 0; /// no student saved yet
+
+    while (choice != 0)
+    {
+
+        printf("Choose form following options:\n1-Add a new student\n2-Add/delete a course\n3-search for a student\n4-Print fee invoice\n0-Exit program\n");
+
+        scanf("%d", &choice);
+
+        switch (choice)
+        {
+
+        case 1:
+        { //// add student
+
+            int id;
+
+            char name[100];
+
+            printf("\nEnter student id =");
+
+            scanf("%d", &id);
+
+            printf("\nEnter student name =");
+
+            scanf("%s", name);
+
+            student[student_cnt].id = id;
+
+            strcpy(student[student_cnt].name, name);
+
+            int flag = searchstudent(student, id, student_cnt);
+
+            if (flag == 0)
+            {
+
+                int no = 0;
+
+                printf("\nEnter How many courses %s have taken =", name);
+
+                scanf("%d", &no);
+
+                int a;
+
+                printf("\nEnter %d courses numbers=", no);
+
+                int i;
+
+                student[student_cnt].course_cnt = 0;
+
+                for (i = 0; i < no; i++)
+                {
+
+                    printf("\nEnter course %d id =", i + 1);
+
+                    scanf("%d", &a);
+
+                    if (searchcourse(List, course_list_cnt, a) == 1)
+                    {
+
+                        student[student_cnt].student_course[student[student_cnt].course_cnt] = a;
+
+                        student[student_cnt].course_cnt++;
+
+                        printf("\nThe course no %d is available and added successfully", a);
+
+                    } // if
+
+                    else
+                    {
+
+                        printf("\nThe course no %d is not available", a);
+                    }
+
+                } // for
+
+                student_cnt++;
+
+            } /// if flag==1
+
+            break;
+        }
+
+        case 2:
+
+        {
+
+            int id;
+
+            char newchoice;
+
+            printf("\nEnter student id =");
+
+            scanf("%d", &id);
+
+            student[student_cnt].id = id;
+
+            int flag = searchstudent(student, id, student_cnt);
+
+            if (flag == 1)
+            {
+
+                printf("\nChoose from :\na.Add new course\nd.Delete a course\nc.cancel operation");
+
+                scanf("%c", &newchoice);
+
+                if (newchoice == 'c')
+                {
+
+                    break;
+                }
+
+                else if (newchoice == 'a')
+                {
+
+                    int a;
+
+                    printf("\nEnter course id");
+
+                    scanf("%d", &a);
+
+                    if (searchcourse(List, course_list_cnt, a) == 1)
+                    {
+
+                        student[student_cnt].student_course[student[student_cnt].course_cnt] = a;
+
+                        student[student_cnt].course_cnt++;
+
+                        printf("\nThe course no %d is available and added successfully", a);
+
+                    } // if
+
+                    else
+                    {
+
+                        printf("\nThe course no %d is not available", a);
+                    }
+
+                } /// else if
+
+                /*
+
+                add module delete course by delete course from Student.course and decrease the Student.course_cnt by 1
+
+                else if(newchoice=='d'){
+
+                }
+
+                */
+            }
+
+            else
+            {
+
+                printf("\nStudent is not added yet ..\n");
+            }
+
+            break;
+        }
+
+        case 3:
+        {
+
+            int id;
+
+            printf("\nEnter student id =");
+
+            scanf("%d", &id);
+
+            if (searchstudent(student, id, student_cnt) == 1)
+            {
+
+                printf("\nStudent has been stored ");
+            }
+
+            else
+
+                printf("\nNo Student found");
+
+            break;
+        }
+
+        case 4:
+        {
+
+            int id;
+
+            printf("\nEnter student id =");
+
+            scanf("%d", &id);
+
+            if (searchstudent(student, id, student_cnt) == 1)
+            {
+
+                printFee(student, List, student_cnt, id, course_list_cnt);
+            }
+
+            else
+            {
+
+                printf("\nStudent have not added");
+            }
+
+            break;
+        }
+
+        case 0:
+
+            break;
+        }
+    }
 
     return 0;
 }
