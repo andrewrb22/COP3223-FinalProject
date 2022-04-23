@@ -31,10 +31,21 @@ List[1].credit_hr=3;
 List[2].CRN=8997;
 strcpy(List[2].course, "GOL 124");
 List[2].credit_hr=1;
-
-
-
-
+List[3].CRN=9696;
+strcpy(List[3].course, "COP 100");
+List[3].credit_hr=3;
+List[4].CRN=1232;
+strcpy(List[4].course, "MAC 531");
+List[4].credit_hr=5;
+List[5].CRN=9856;
+strcpy(List[5].course, "STA 100");
+List[5].credit_hr=2;
+List[6].CRN=8520;
+strcpy(List[6].course, "TNV 400");
+List[6].credit_hr=5;
+List[7].CRN=8977;
+strcpy(List[7].course, "CMP 100");
+List[7].credit_hr=1;
 }
 
 
