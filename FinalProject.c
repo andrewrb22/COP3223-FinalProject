@@ -47,7 +47,20 @@ List[7].CRN=8977;
 strcpy(List[7].course, "CMP 100");
 List[7].credit_hr=1;
 }
+//-----------Search Student Function------------------------//
+int searchstudent(student student[],int id,int cnt){
 
+   int i;
+
+for(i=0;i<cnt;i++){
+
+if(student[i].id==id){
+
+return 1;
+}
+}
+return 0;
+}
 
 //-----------Main function-----------------------------------//
 
