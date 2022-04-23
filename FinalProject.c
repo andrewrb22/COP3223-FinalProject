@@ -62,6 +62,23 @@ return 1;
 return 0;
 }
 
+//---------------Search Course Function---------------------//
+int searchCourse(course List[],int course_list_cnt,int id){
+
+int i;
+
+for(i=0;i<course_list_cnt;i++){
+
+if(List[i].CRN==id)
+
+return 1;
+
+}
+
+return 0;
+
+}
+
 //-----------Main function-----------------------------------//
 
 int main(){
