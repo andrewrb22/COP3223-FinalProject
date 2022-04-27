@@ -100,15 +100,15 @@ int printFee(student student[], course List[], int student_cnt, int student_id, 
         if (student[i].id == student_id)
         {
 
-            printf("\n\n-------------------\nVALENCE COMMUNTY COLLEGE\nORLANDE FL 10101\n------------\n");
-
-            printf("\nFee Invoice Prepared for Student:");
+             printf("VALENCE COMMUNITY COLLEGE\n ORLANDO FL 10101\n");
+                printf("---------------------\n\n");
+            printf("Fee Invoice Prepared for Student:\n");
 
             printf("%d - %s\n", student[i].id, student[i].name);
 
-            printf("\n1 credit Hour = $120.25");
+            printf("1 credit Hour = $120.25\n\n");
 
-            printf("\nCRN\tCR_PREFIX\tCR_HOURS\n");
+             printf("CRN\tCR_PREFIX\tCR_HOURS\n");
 
             int j = 0;
 
