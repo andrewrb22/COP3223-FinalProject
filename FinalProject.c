@@ -167,7 +167,7 @@ int main()
     while (choice != 0)
     {
 
-        printf("Choose form following options:\n1-Add a new student\n2-Add/delete a course\n3-search for a student\n4-Print fee invoice\n0-Exit program\n");
+        printf("\nChoose form following options:\n\t1-Add a new student\n\t2-Add/delete a course\n\t3-Search for a student\n\t4-Print fee invoice\n\t0-Exit program\n\nEnter your selection: ");
 
         scanf("%d", &choice);
 
@@ -181,11 +181,11 @@ int main()
 
             char name[100];
 
-            printf("\nEnter student id =");
+            printf("\nEnter student's id: ");
 
             scanf("%d", &id);
 
-            printf("\nEnter student name =");
+            printf("\nEnter student's name:");
 
             scanf("%s", name);
 
@@ -200,13 +200,13 @@ int main()
 
                 int no = 0;
 
-                printf("\nEnter How many courses %s have taken =", name);
+                printf("\nEnter how many courses [%s] is taking (up to 4 courses)?\n", name);
 
                 scanf("%d", &no);
 
                 int a;
 
-                printf("\nEnter %d courses numbers=", no);
+                printf("\nEnter the %d course numbers\n", no);
 
                 int i;
 
@@ -327,19 +327,19 @@ int main()
 
             int id;
 
-            printf("\nEnter student id =");
+            printf("\nEnter student's id: ");
 
             scanf("%d", &id);
 
             if (searchstudent(student, id, student_cnt) == 1)
             {
 
-                printf("\nStudent has been stored ");
+                printf("\nStudent added successfully!");
             }
 
             else
 
-                printf("\nNo Student found");
+                printf("\nNo Student found\n\n-------------------- \n");
 
             break;
         }
