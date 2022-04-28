@@ -100,15 +100,15 @@ int printFee(student student[], course List[], int student_cnt, int student_id, 
         if (student[i].id == student_id)
         {
 
-             printf("VALENCE COMMUNITY COLLEGE\n ORLANDO FL 10101\n");
-                printf("---------------------\n\n");
-            printf("Fee Invoice Prepared for Student:\n");
+             printf("\n\t\tVALENCE COMMUNITY COLLEGE\n\t\tORLANDO FL 10101\n");
+                printf("\n\t\t---------------------\n");
+            printf("\n\t\tFee Invoice Prepared for Student:\n");
 
-            printf("%d - %s\n", student[i].id, student[i].name);
+            printf("\t\t%d - %s\n", student[i].id, student[i].name);
 
-            printf("1 credit Hour = $120.25\n\n");
+            printf("\n\t\t1 credit Hour = $120.25\n\n");
 
-             printf("CRN\tCR_PREFIX\tCR_HOURS\n");
+             printf("\n\t\tCRN\t\tCR_PREFIX\tCR_HOURS\n");
 
             int j = 0;
 
@@ -125,22 +125,22 @@ int printFee(student student[], course List[], int student_cnt, int student_id, 
 
                         amount += 120.25 * List[k].credit_hr;
 
-                        printf("\n%d\t\t%s\t\t%d\t\t$%f", List[k].CRN, List[k].course, List[k].credit_hr, amount);
+                        printf("\n\t\t%d\t\t%s\t\t%d\t\t$%f", List[k].CRN, List[k].course, List[k].credit_hr, amount);
 
                         break;
                     }
                 }
             }
 
-            printf("\n\t\tHealth and id fees \t\t $ 35.00");
+            printf("\n\n\t\t\t\tHealth and id fees \t\t $ 35.00");
 
-            printf("\n--------------------------------");
+            printf("\n\t\t---------------------------------------------------------");
 
-            printf("\n\t\tTotal payments=\t\t$%f", (amount + 35));
+            printf("\n\t\t\tTotal payments\t\t$%f", (amount + 35));
 
         } // if
 
-        printf("\n\n");
+        printf("\n\n--------------------------");
     }
 
     return 0;
@@ -167,7 +167,7 @@ int main()
     while (choice != 0)
     {
 
-        printf("\nChoose form following options:\n\t1-Add a new student\n\t2-Add/delete a course\n\t3-Search for a student\n\t4-Print fee invoice\n\t0-Exit program\n\nEnter your selection: ");
+        printf("\nChoose from following options:\n\n\t1-Add a new student\n\t2-Add/delete a course\n\t3-Search for a student\n\t4-Print fee invoice\n\t0-Exit program\n\nEnter your selection: ");
 
         scanf("%d", &choice);
 
@@ -226,14 +226,14 @@ int main()
 
                         student[student_cnt].course_cnt++;
 
-                        printf("\nThe course no %d is available and added successfully", a);
+                        printf("\nThe course [%d] is available and added successfully!!\n\n", a);
 
                     } // if
 
                     else
                     {
 
-                        printf("\nThe course no %d is not available", a);
+                        printf("\nThe course  [%d] is not available", a);
                     }
 
                 } // for
@@ -253,7 +253,7 @@ int main()
 
             char newchoice;
 
-            printf("\nEnter student id =");
+            printf("\nEnter student's id: ");
 
             scanf("%d", &id);
 
@@ -290,27 +290,17 @@ int main()
 
                         student[student_cnt].course_cnt++;
 
-                        printf("\nThe course no %d is available and added successfully", a);
+                        printf("\nThe course  [%d] is available and added successfully", a);
 
-                    } // if
+                    }
 
                     else
                     {
 
-                        printf("\nThe course no %d is not available", a);
+                        printf("\nThe course  [%d] is not available", a);
                     }
 
-                } /// else if
-
-                /*
-
-                add module delete course by delete course from Student.course and decrease the Student.course_cnt by 1
-
-                else if(newchoice=='d'){
-
-                }
-
-                */
+                } 
             }
 
             else
@@ -334,7 +324,7 @@ int main()
             if (searchstudent(student, id, student_cnt) == 1)
             {
 
-                printf("\nStudent added successfully!");
+                printf("\nStudent found successfully!");
             }
 
             else
@@ -349,7 +339,7 @@ int main()
 
             int id;
 
-            printf("\nEnter student id =");
+            printf("\nEnter student's id: ");
 
             scanf("%d", &id);
 
